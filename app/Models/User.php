@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
   public function passport()
   {
-      return $this->hasOne('App\Models\Passport');
+    return $this->hasOne('App\Models\Passport');
+  }
+
+  public function forums()
+  {
+    return $this->hasMany('App\Models\Forum');
   }
 }
