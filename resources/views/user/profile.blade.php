@@ -14,5 +14,12 @@
         <li>{{ $forum->title }}</li>
       @endforeach
     </ul>
+
+    <h3>Lesson List :</h3>
+    <ul>
+      @foreach ($user->lessons as $lesson)
+        <li>{{ $lesson->title }}</li>
+      @endforeach
+    </ul>
   </body>
 </html>
