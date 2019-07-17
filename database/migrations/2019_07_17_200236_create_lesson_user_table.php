@@ -17,6 +17,7 @@ class CreateLessonUserTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('lesson_id')->unsigned();
+            $table->integer('is_active');
 
             $table->foreign('user_id')->references('id')
                   ->on('users')->onDelete('cascade');
