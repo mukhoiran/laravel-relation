@@ -6,5 +6,6 @@
   </head>
   <body>
     <h1>Welcome, {{ $user->name }}</h1>
+    <p>Your passport number : {{ $user->passport->passport_no }}</p>
   </body>
 </html>
