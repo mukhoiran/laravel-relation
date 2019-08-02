@@ -13,7 +13,16 @@ class UserController extends Controller
 {
   public function showProfile($id)
   {
-      return view('user.profile', ['user' => User::findOrFail($id)]);
+    // Eager loading (doing multiple select for increase speed)
+    // $user = User::with('forums')->where('id', $id)->first();
+    // $user = User::with('forums','lessons')->where('id', $id)->first();
+    // $user = User::with(['forums' => function($query){
+    //   $query->where('title', 'like', '%first%');
+    // }])->where('id', $id)->first();
+
+    $user = User::where('id', $id)->first();
+    return view('user.profile', ['user' => $user]);
+      // return view('user.profile', ['user' => User::findOrFail($id)]);
   }
 
   public function showPassport($id)
