@@ -13,5 +13,12 @@
     </ul>
 
     <p>Like : {{$lesson->likes->count()}}</p>
+
+    <h1>Tag list :</h1>
+    <ul>
+      @foreach ($lesson->tags as $tag)
+        <li>{{ $tag->name }}</li>
+      @endforeach
+    </ul>
   </body>
 </html>
