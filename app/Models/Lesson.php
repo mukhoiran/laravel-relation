@@ -13,4 +13,8 @@ class Lesson extends Model
       // return $this->belongsToMany('App\Models\User')->withTimeStamps()->withPivot('is_active')->wherePivot('is_active',0);
       // return $this->belongsToMany('App\Models\User')->withTimeStamps()->withPivot('is_active')->wherePivotIn('is_active',[0,1]);
   }
+
+  public function likes(){
+    return $this->morphMany('App\Models\Like', 'likeable');
+  }
 }

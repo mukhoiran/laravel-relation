@@ -11,5 +11,7 @@
         <li>{{ $user->name }} - {{ $user->pivot->created_at }} - {{ ($user->pivot->is_active == 1)?'active':'not active' }}</li>
       @endforeach
     </ul>
+
+    <p>Like : {{$lesson->likes->count()}}</p>
   </body>
 </html>
